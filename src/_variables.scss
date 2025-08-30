@@ -1,0 +1,54 @@
+// Variables
+
+// Colors
+$primary: #e63946;
+$secondary: #6c757d;
+$success: #198754;
+$danger: #dc3545;
+$warning: #ffc107;
+$info: #0dcaf0;
+$light: #f8f9fa;
+$dark: #212529;
+$white: #fff;
+$black: #000;
+
+// Theme Colors Map
+$theme-colors: (
+    "primary": $primary,
+    "secondary": $secondary,
+    "success": $success,
+    "danger": $danger,
+    "warning": $warning,
+    "info": $info,
+    "light": $light,
+    "dark": $dark,
+    "white": $white,
+    "black": $black,
+    "nav-text": var(--theme-sticky-nav-text-color),
+    "nav-bg": var(--theme-sticky-nav-background-color)
+);
+
+// Layout
+$border-radius: 3px;
+$spacer: 1rem;
+$gutter-x: 1.5rem;
+$gutter-y: 0;
+
+// Breakpoints
+$breakpoints: (
+    sm: 360px,
+    md: 768px,
+    lg: 992px,
+    xl: 1200px
+);
+
+// Spacing
+$spacing-steps: (
+    "0": 0,
+    "1": $spacer * .25,
+    "2": $spacer * .5,
+    "3": $spacer,
+    "4": $spacer * 1.5,
+    "5": $spacer * 3,
+    "6": $spacer * 5
+);

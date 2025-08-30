@@ -1,0 +1,23 @@
+// Grid System
+// Simple flexbox grid implementation
+
+@use "variables" as *;
+@use "sass:math";
+
+.row {
+    display: flex;
+    flex-wrap: wrap;
+    margin: calc(-1 * #{$gutter-y}) 0 0 calc(-0.5 * #{$gutter-x});
+}
+
+.row > * {
+    padding: #{$gutter-y} calc(#{$gutter-x} * 0.5);
+}
+
+// Columns
+@for $i from 1 through 12 {
+    .col-#{$i} {
+        flex: 0 0 auto;
+        width: math.percentage(math.div($i, 12));
+    }
+}

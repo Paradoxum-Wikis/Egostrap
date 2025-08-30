@@ -1,0 +1,32 @@
+name: Deploy to ALTERPEDIA
+
+on:
+  push:
+    branches:
+      - main
+  workflow_dispatch:
+
+jobs:
+  build-and-deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v5
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+
+      - name: Install dependencies
+        run: npm install
+
+      - name: Build SCSS
+        run: npm run build
+
+      - name: Upload CSS to wiki
+        run: node scripts/upload.js
+        env:
+          WIKI_BOT_USERNAME: ${{ secrets.WIKI_BOT_USERNAME }}
+          WIKI_BOT_PASSWORD: ${{ secrets.WIKI_BOT_PASSWORD }}

@@ -1,0 +1,16 @@
+// Conditional Themes
+// This allows for what elements to appear depending on the user's active theme
+
+.mode-light, .mode-dark {
+    display: none;
+}
+
+.theme-fandomdesktop-light .mode-light,
+.theme-fandommobile-light .mode-light {
+    display: block;
+}
+
+.theme-fandomdesktop-dark .mode-dark,
+.theme-fandommobile-dark .mode-dark {
+    display: block;
+}

@@ -1,0 +1,8 @@
+{
+  "dependencies": {
+    "sass": "^1.91.0"
+  },
+  "scripts": {
+    "build": "sass Egostrap.scss Egostrap.css --style=compressed"
+  }
+}
