@@ -26,7 +26,7 @@ jobs:
         run: npm run build
 
       - name: Upload CSS to wiki
-        run: node scripts/upload.js
+        run: node .github/scripts/upload.js
         env:
           WIKI_BOT_USERNAME: ${{ secrets.WIKI_BOT_USERNAME }}
           WIKI_BOT_PASSWORD: ${{ secrets.WIKI_BOT_PASSWORD }}
