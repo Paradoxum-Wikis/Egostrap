@@ -4,7 +4,7 @@
     "sass": "^1.91.0"
   },
   "scripts": {
-    "build": "sass src/Egostrap.scss Egostrap.css --style=compressed",
+    "build": "sass src/Egostrap.scss Egostrap.css --style=compressed --no-source-map",
     "build2": "sass src/Egostrap.scss Egostrap.css"
   },
   "devDependencies": {
