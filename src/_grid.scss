@@ -21,3 +21,61 @@
         width: math.percentage(math.div($i, 12));
     }
 }
+
+// Auto size and equal width
+.col {
+    flex: 1 0 0%;
+}
+.col-auto {
+    flex: 0 0 auto;
+    width: auto;
+}
+
+// Responsive Columns
+@each $name, $breakpoint in $breakpoints {
+    @media (min-width: #{$breakpoint}) {
+        @for $i from 1 through 12 {
+            .col-#{$name}-#{$i} {
+                flex: 0 0 auto;
+                width: math.percentage(math.div($i, 12));
+            }
+        }
+        .col-#{$name} {
+            flex: 1 0 0%;
+        }
+        .col-#{$name}-auto {
+            flex: 0 0 auto;
+            width: auto;
+        }
+    }
+}
+
+// Offsets
+@for $i from 1 through 11 {
+    .offset-#{$i} {
+        margin-left: math.percentage(math.div($i, 12));
+    }
+}
+
+@each $name, $breakpoint in $breakpoints {
+    @media (min-width: #{$breakpoint}) {
+        @for $i from 1 through 11 {
+            .offset-#{$name}-#{$i} {
+                margin-left: math.percentage(math.div($i, 12));
+            }
+        }
+    }
+}
+
+// Ordering
+@for $i from 1 through 12 {
+    .order-#{$i} {
+        order: $i;
+    }
+}
+.order-first {
+    order: -1;
+}
+.order-last {
+    order: 13;
+}

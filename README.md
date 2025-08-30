@@ -24,7 +24,3 @@ I personally recommend installing Sass as global, but you do you.
 You can compile the SCSS by doing ```npm run build```.
 
 With the compiled file, you can then go into your browser's style editor and replace the current Egostrap with your version.
-
-## License
-
-MIT License. See LICENSE for details.
