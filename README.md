@@ -4,6 +4,8 @@ A clone of Bootstrap that is used on ALTERPEDIA, part of the ALTER EGO Wiki.
 
 The compiled CSS file will get transferred automatically to the wiki.
 
+Documentation can be found [here](https://alter-ego.fandom.com/wiki/Help:Manual/Framework).
+
 ## Installation
 
 1. Clone the repository:
