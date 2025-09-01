@@ -112,6 +112,10 @@ $line-heights: (
   white-space: nowrap;
 }
 
+// Text Direction
+.ltr { direction: ltr !important; }
+.rtl { direction: rtl !important; }
+
 // Spacing (Margin & Padding)
 $space-properties: (
     "m": "margin",
