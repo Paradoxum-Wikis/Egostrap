@@ -2,7 +2,8 @@
 // Various utility classes for common CSS properties
 // This is the important part of the framework
 
- @use "variables" as *;
+@use "variables" as *;
+@use "sass:meta";
 
 // Display
 $display-properties: "block", "inline", "inline-block", "flex", "inline-flex", "grid", "inline-grid", "table", "table-cell", "table-row", "none";
@@ -132,7 +133,7 @@ $space-directions: (
     // Negative margins: .m-n1
     @if $prop-abbr == "m" {
         @each $key, $value in $spacing-steps {
-            @if $value != 0 and type-of($value) == "number" {
+            @if $value != 0 and meta.type-of($value) == "number" {
                 .#{$prop-abbr}-n#{$key} { #{$prop-full}: calc(-1 * #{$value}) !important; }
             }
         }
@@ -147,7 +148,7 @@ $space-directions: (
             .#{$prop-abbr}x-#{$key} { #{$prop-full}-inline-start: #{$value} !important; #{$prop-full}-inline-end: #{$value} !important; }
             .#{$prop-abbr}y-#{$key} { #{$prop-full}-top: #{$value} !important; #{$prop-full}-bottom: #{$value} !important; }
             
-            @if $prop-abbr == "m" and type-of($value) == "number" {
+            @if $prop-abbr == "m" and meta.type-of($value) == "number" {
                 .#{$prop-abbr}x-n#{$key} { #{$prop-full}-inline-start: calc(-1 * #{$value}) !important; #{$prop-full}-inline-end: calc(-1 * #{$value}) !important; }
                 .#{$prop-abbr}y-n#{$key} { #{$prop-full}-top: calc(-1 * #{$value}) !important; #{$prop-full}-bottom: calc(-1 * #{$value}) !important; }
             }
@@ -159,7 +160,7 @@ $space-directions: (
          @each $key, $value in $spacing-steps {
             .#{$prop-abbr}#{$dir-abbr}-#{$key} { #{$prop-full}-#{$dir-full}: #{$value} !important; }
 
-             @if $prop-abbr == "m" and $value != 0 and type-of($value) == "number" {
+             @if $prop-abbr == "m" and $value != 0 and meta.type-of($value) == "number" {
                 .#{$prop-abbr}#{$dir-abbr}-n#{$key} { #{$prop-full}-#{$dir-full}: calc(-1 * #{$value}) !important; }
             }
         }
