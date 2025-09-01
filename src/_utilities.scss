@@ -67,15 +67,10 @@ $align-content: (
     .align-content-#{$key} { align-content: $value !important; }
 }
 
-// Centering
-.content-center, .m-center { margin: 0 auto !important; }
-
 // Text Properties
 $text-align: (
     "start": start,
-    "left": start,
     "end": end,
-    "right": end,
     "center": center,
     "justify": justify,
     "match": match-parent
@@ -126,9 +121,7 @@ $space-directions: (
     "t": "top",
     "b": "bottom",
     "s": "inline-start",
-    "e": "inline-end",
-    "l": "inline-start", // legacy
-    "r": "inline-end" // legacy
+    "e": "inline-end"
 );
 
 @each $prop-abbr, $prop-full in $space-properties {
@@ -139,7 +132,7 @@ $space-directions: (
     // Negative margins: .m-n1
     @if $prop-abbr == "m" {
         @each $key, $value in $spacing-steps {
-            @if $value != 0 {
+            @if $value != 0 and type-of($value) == "number" {
                 .#{$prop-abbr}-n#{$key} { #{$prop-full}: calc(-1 * #{$value}) !important; }
             }
         }
@@ -154,7 +147,7 @@ $space-directions: (
             .#{$prop-abbr}x-#{$key} { #{$prop-full}-inline-start: #{$value} !important; #{$prop-full}-inline-end: #{$value} !important; }
             .#{$prop-abbr}y-#{$key} { #{$prop-full}-top: #{$value} !important; #{$prop-full}-bottom: #{$value} !important; }
             
-            @if $prop-abbr == "m" {
+            @if $prop-abbr == "m" and type-of($value) == "number" {
                 .#{$prop-abbr}x-n#{$key} { #{$prop-full}-inline-start: calc(-1 * #{$value}) !important; #{$prop-full}-inline-end: calc(-1 * #{$value}) !important; }
                 .#{$prop-abbr}y-n#{$key} { #{$prop-full}-top: calc(-1 * #{$value}) !important; #{$prop-full}-bottom: calc(-1 * #{$value}) !important; }
             }
@@ -166,7 +159,7 @@ $space-directions: (
          @each $key, $value in $spacing-steps {
             .#{$prop-abbr}#{$dir-abbr}-#{$key} { #{$prop-full}-#{$dir-full}: #{$value} !important; }
 
-             @if $prop-abbr == "m" and $value != 0 {
+             @if $prop-abbr == "m" and $value != 0 and type-of($value) == "number" {
                 .#{$prop-abbr}#{$dir-abbr}-n#{$key} { #{$prop-full}-#{$dir-full}: calc(-1 * #{$value}) !important; }
             }
         }
