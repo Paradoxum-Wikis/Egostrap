@@ -313,7 +313,7 @@ $position-values: 0, 50, 100;
 }
 
 // Overflow
-$overflows: "auto", "hidden", "visible", "scroll";
+$overflows: auto, hidden, visible, scroll;
 @each $o in $overflows {
     .overflow-#{$o} { overflow: $o !important; }
     .overflowx-#{$o} { overflow-x: $o !important; }
