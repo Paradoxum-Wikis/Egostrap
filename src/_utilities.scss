@@ -214,14 +214,14 @@ $font-weights: (
 }
 
 .text-dual {
-    background: linear-gradient(to right, #ff725e 50%, #b5285e 50%);
+    background: linear-gradient(to right, var(--border-color) 50%, #FF1D21 50%);
     -webkit-background-clip: text;
     background-clip: text;
     color: transparent;
 }
 
 .bg-dual {
-    background: linear-gradient(to right, #ff725e 50%, #b5285e 50%);
+    background: linear-gradient(to right, var(--border-color) 50%, #FF1D21 50%);
 }
 
 .gradient-center {
