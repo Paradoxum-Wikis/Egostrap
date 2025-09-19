@@ -73,7 +73,13 @@ class WikiCSSUploader {
     const cssContent = fs.readFileSync(cssPath, 'utf-8');
 
     await this.login();
-    await this.editPage(cssContent, "Automated deploy from https://github.com/Paradoxum-Wikis/Egostrap");
+
+    const commitSha = process.env.GITHUB_SHA;
+    const summary = commitSha
+      ? `See https://github.com/Paradoxum-Wikis/Egostrap/commit/${commitSha}`
+      : "Automated deploy from https://github.com/Paradoxum-Wikis/Egostrap";
+
+    await this.editPage(cssContent, summary);
 
     console.log("Successfully updated MediaWiki:Egostrap.css");
   }
