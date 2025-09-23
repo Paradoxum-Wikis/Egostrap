@@ -19,6 +19,14 @@
     background: linear-gradient(to right, var(--border-color) 50%, var(--accent-color) 50%);
 }
 
+.bg-splatter {
+    background: var(--splatter-bg);
+}
+
+.bg-splatter-red {
+    background: var(--splatter-bg-red);
+}
+
 .gradient-center {
     text-align: center;
     width: 100%;
