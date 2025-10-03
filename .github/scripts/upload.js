@@ -1,7 +1,7 @@
 // import 'dotenv/config';
-import fs from 'fs';
-import path from 'path';
-import { default as fetchCookie } from 'fetch-cookie';
+import fs from "fs";
+import path from "path";
+import { default as fetchCookie } from "fetch-cookie";
 
 const API_URL = "https://alter-ego.fandom.com/api.php";
 const PAGE_TITLE = "MediaWiki:Egostrap.css";
@@ -18,7 +18,8 @@ class WikiCSSUploader {
       body: params,
       headers: { "Content-Type": "application/x-www-form-urlencoded" },
     });
-    if (!response.ok) throw new Error(`API request failed: ${response.statusText}`);
+    if (!response.ok)
+      throw new Error(`API request failed: ${response.statusText}`);
     return response.json();
   }
 
@@ -61,16 +62,19 @@ class WikiCSSUploader {
       format: "json",
     });
     const data = await this.apiRequest(params);
-    if (data.error) throw new Error(`Failed to edit wiki page: ${data.error.info}`);
+    if (data.error)
+      throw new Error(`Failed to edit wiki page: ${data.error.info}`);
   }
 
   static async uploadCSS() {
-    if (!this.botUsername || !this.botPassword) throw new Error("Wiki bot credentials not configured.");
+    if (!this.botUsername || !this.botPassword)
+      throw new Error("Wiki bot credentials not configured.");
 
-    const cssPath = path.join(process.cwd(), 'Egostrap.css');
-    if (!fs.existsSync(cssPath)) throw new Error("Compiled CSS file not found.");
+    const cssPath = path.join(process.cwd(), "Egostrap.css");
+    if (!fs.existsSync(cssPath))
+      throw new Error("Compiled CSS file not found.");
 
-    const cssContent = fs.readFileSync(cssPath, 'utf-8');
+    const cssContent = fs.readFileSync(cssPath, "utf-8");
 
     await this.login();
 

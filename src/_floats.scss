@@ -5,7 +5,9 @@
 // Floats
 $float-directions: "left", "right", "none";
 @each $dir in $float-directions {
-    .float-#{$dir} { float: $dir !important; }
+  .float-#{$dir} {
+    float: $dir !important;
+  }
 }
 .clearfix::after {
   display: block;
@@ -14,15 +16,20 @@ $float-directions: "left", "right", "none";
 }
 
 @each $name, $breakpoint in $breakpoints {
-    @media (min-width: #{$breakpoint}) {
-        @each $dir in $float-directions {
-            .float-#{$name}-#{$dir} { float: $dir !important; }
-        }
+  @media (min-width: #{$breakpoint}) {
+    @each $dir in $float-directions {
+      .float-#{$name}-#{$dir} {
+        float: $dir !important;
+      }
     }
+  }
 }
 
 // Vertical Alignment
-$vertical-aligns: "baseline", "top", "middle", "bottom", "text-top", "text-bottom";
+$vertical-aligns:
+  "baseline", "top", "middle", "bottom", "text-top", "text-bottom";
 @each $align in $vertical-aligns {
-    .align-#{$align} { vertical-align: #{$align} !important; }
+  .align-#{$align} {
+    vertical-align: #{$align} !important;
+  }
 }

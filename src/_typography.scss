@@ -4,40 +4,46 @@
 
 // Text Properties
 $text-align: (
-    "start": start,
-    "end": end,
-    "center": center,
-    "justify": justify,
-    "match": match-parent
+  "start": start,
+  "end": end,
+  "center": center,
+  "justify": justify,
+  "match": match-parent,
 );
 
 $text-transform: (
-    "lowercase": lowercase,
-    "uppercase": uppercase,
-    "capitalize": capitalize,
-    "full": full-width
+  "lowercase": lowercase,
+  "uppercase": uppercase,
+  "capitalize": capitalize,
+  "full": full-width,
 );
 
 $line-heights: (
-    "0": 0,
-    "1": 1,
-    "2": 1.25,
-    "3": 1.5,
-    "4": 2,
-    "5": 2.5,
-    "6": 3
+  "0": 0,
+  "1": 1,
+  "2": 1.25,
+  "3": 1.5,
+  "4": 2,
+  "5": 2.5,
+  "6": 3,
 );
 
 @each $key, $value in $text-align {
-    .text-#{$key} { text-align: $value !important; }
+  .text-#{$key} {
+    text-align: $value !important;
+  }
 }
 
 @each $key, $value in $text-transform {
-    .text-#{$key} { text-transform: $value !important; }
+  .text-#{$key} {
+    text-transform: $value !important;
+  }
 }
 
 @each $key, $value in $line-heights {
-    .lh-#{$key} { line-height: $value !important; }
+  .lh-#{$key} {
+    line-height: $value !important;
+  }
 }
 
 .text-truncate {
@@ -47,40 +53,48 @@ $line-heights: (
 }
 
 // Text Direction
-.ltr { direction: ltr !important; }
-.rtl { direction: rtl !important; }
+.ltr {
+  direction: ltr !important;
+}
+.rtl {
+  direction: rtl !important;
+}
 
 // Typography (Font Size & Weight)
 $font-sizes: (
-    "1": 2.5rem,
-    "2": 2rem,
-    "3": 1.75rem,
-    "4": 1.65rem,
-    "5": 1.5rem,
-    "6": 1.25rem,
-    "7": 1rem
+  "1": 2.5rem,
+  "2": 2rem,
+  "3": 1.75rem,
+  "4": 1.65rem,
+  "5": 1.5rem,
+  "6": 1.25rem,
+  "7": 1rem,
 );
 
 $font-weights: (
-    "lighter": lighter,
-    "normal": normal,
-    "bold": bold,
-    "bolder": bolder,
-    "100": 100,
-    "200": 200,
-    "300": 300,
-    "400": 400,
-    "500": 500,
-    "600": 600,
-    "700": 700,
-    "800": 800,
-    "900": 900
+  "lighter": lighter,
+  "normal": normal,
+  "bold": bold,
+  "bolder": bolder,
+  "100": 100,
+  "200": 200,
+  "300": 300,
+  "400": 400,
+  "500": 500,
+  "600": 600,
+  "700": 700,
+  "800": 800,
+  "900": 900,
 );
 
 @each $key, $value in $font-sizes {
-    .fs-#{$key} { font-size: $value; }
+  .fs-#{$key} {
+    font-size: $value;
+  }
 }
 
 @each $key, $value in $font-weights {
-    .fw-#{$key} { font-weight: $value; }
+  .fw-#{$key} {
+    font-weight: $value;
+  }
 }

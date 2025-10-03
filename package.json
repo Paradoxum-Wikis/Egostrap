@@ -6,10 +6,11 @@
   },
   "scripts": {
     "build": "sass src/Egostrap.scss Egostrap.css --style=compressed --no-source-map",
-    "build2": "sass src/Egostrap.scss Egostrap.css"
+    "build2": "sass src/Egostrap.scss Egostrap.css",
+    "format": "prettier . --write"
   },
   "devDependencies": {
-    "dotenv": "^17.2.1"
+    "dotenv": "^17.2.1",
+    "prettier": "^3.6.2"
   }
 }
-  

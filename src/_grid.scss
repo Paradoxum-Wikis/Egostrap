@@ -5,74 +5,74 @@
 @use "sass:math";
 
 .row {
-    display: flex;
-    flex-wrap: wrap;
-    margin: calc(-1 * #{$gutter-y}) 0 0 calc(-0.5 * #{$gutter-x});
+  display: flex;
+  flex-wrap: wrap;
+  margin: calc(-1 * #{$gutter-y}) 0 0 calc(-0.5 * #{$gutter-x});
 }
 
 .row > * {
-    padding: #{$gutter-y} calc(#{$gutter-x} * 0.5);
+  padding: #{$gutter-y} calc(#{$gutter-x} * 0.5);
 }
 
 // Columns
 @for $i from 1 through 12 {
-    .col-#{$i} {
-        flex: 0 0 auto;
-        width: math.percentage(math.div($i, 12));
-    }
+  .col-#{$i} {
+    flex: 0 0 auto;
+    width: math.percentage(math.div($i, 12));
+  }
 }
 
 // Auto size & equal width
 .col {
-    flex: 1 0 0%;
+  flex: 1 0 0%;
 }
 .col-auto {
-    flex: 0 0 auto;
-    width: auto;
+  flex: 0 0 auto;
+  width: auto;
 }
 
 // Responsive Columns
 @each $name, $breakpoint in $breakpoints {
-    @media (min-width: #{$breakpoint}) {
-        @for $i from 1 through 12 {
-            .col-#{$name}-#{$i} {
-                flex: 0 0 auto;
-                width: math.percentage(math.div($i, 12));
-            }
-        }
-        .col-#{$name} {
-            flex: 1 0 0%;
-        }
-        .col-#{$name}-auto {
-            flex: 0 0 auto;
-            width: auto;
-        }
+  @media (min-width: #{$breakpoint}) {
+    @for $i from 1 through 12 {
+      .col-#{$name}-#{$i} {
+        flex: 0 0 auto;
+        width: math.percentage(math.div($i, 12));
+      }
     }
+    .col-#{$name} {
+      flex: 1 0 0%;
+    }
+    .col-#{$name}-auto {
+      flex: 0 0 auto;
+      width: auto;
+    }
+  }
 }
 
 // Offsets
 @for $i from 1 through 11 {
-    .offset-#{$i} {
-        margin-left: math.percentage(math.div($i, 12));
-    }
+  .offset-#{$i} {
+    margin-left: math.percentage(math.div($i, 12));
+  }
 }
 
 @each $name, $breakpoint in $breakpoints {
-    @media (min-width: #{$breakpoint}) {
-        @for $i from 1 through 11 {
-            .offset-#{$name}-#{$i} {
-                margin-left: math.percentage(math.div($i, 12));
-            }
-        }
+  @media (min-width: #{$breakpoint}) {
+    @for $i from 1 through 11 {
+      .offset-#{$name}-#{$i} {
+        margin-left: math.percentage(math.div($i, 12));
+      }
     }
+  }
 }
 
 // Ordering
 @for $i from 1 through 13 {
-    .order-#{$i} {
-        order: $i;
-    }
+  .order-#{$i} {
+    order: $i;
+  }
 }
 .order-n1 {
-    order: -1;
+  order: -1;
 }

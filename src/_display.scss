@@ -4,79 +4,93 @@
 @use "variables" as *;
 
 // Display
-$display-properties: "block", "inline", "inline-block", "flex", "inline-flex", "grid", "inline-grid", "table", "table-cell", "table-row", "none";
+$display-properties:
+  "block", "inline", "inline-block", "flex", "inline-flex", "grid",
+  "inline-grid", "table", "table-cell", "table-row", "none";
 
 @each $prop in $display-properties {
-    .d-#{$prop} { display: #{$prop} !important; }
+  .d-#{$prop} {
+    display: #{$prop} !important;
+  }
 }
 
 @each $name, $breakpoint in $breakpoints {
-    @media (min-width: #{$breakpoint}) {
-        @each $prop in $display-properties {
-            .d-#{$name}-#{$prop} { display: #{$prop} !important; }
-        }
+  @media (min-width: #{$breakpoint}) {
+    @each $prop in $display-properties {
+      .d-#{$name}-#{$prop} {
+        display: #{$prop} !important;
+      }
     }
+  }
 }
 
 // Flexbox Alignment
 $justify-content: (
-    "start": flex-start,
-    "end": flex-end,
-    "center": center,
-    "between": space-between,
-    "around": space-around,
-    "evenly": space-evenly
+  "start": flex-start,
+  "end": flex-end,
+  "center": center,
+  "between": space-between,
+  "around": space-around,
+  "evenly": space-evenly,
 );
 
 $align-items: (
-    "start": flex-start,
-    "end": flex-end,
-    "center": center,
-    "baseline": baseline,
-    "stretch": stretch
+  "start": flex-start,
+  "end": flex-end,
+  "center": center,
+  "baseline": baseline,
+  "stretch": stretch,
 );
 
 $align-self: (
-    "start": flex-start,
-    "end": flex-end,
-    "center": center,
-    "baseline": baseline,
-    "stretch": stretch
+  "start": flex-start,
+  "end": flex-end,
+  "center": center,
+  "baseline": baseline,
+  "stretch": stretch,
 );
 
 $align-content: (
-    "start": flex-start,
-    "end": flex-end,
-    "center": center,
-    "between": space-between,
-    "around": space-around,
-    "stretch": stretch
+  "start": flex-start,
+  "end": flex-end,
+  "center": center,
+  "between": space-between,
+  "around": space-around,
+  "stretch": stretch,
 );
 
 @each $key, $value in $justify-content {
-    .justify-content-#{$key} { justify-content: $value !important; }
+  .justify-content-#{$key} {
+    justify-content: $value !important;
+  }
 }
 @each $key, $value in $align-items {
-    .align-items-#{$key} { align-items: $value !important; }
+  .align-items-#{$key} {
+    align-items: $value !important;
+  }
 }
 @each $key, $value in $align-self {
-    .align-self-#{$key} { align-self: $value !important; }
+  .align-self-#{$key} {
+    align-self: $value !important;
+  }
 }
 @each $key, $value in $align-content {
-    .align-content-#{$key} { align-content: $value !important; }
+  .align-content-#{$key} {
+    align-content: $value !important;
+  }
 }
 
 // Flex Wrap
 .flex-wrap {
-    flex-wrap: wrap !important;
+  flex-wrap: wrap !important;
 }
 
 .flex-nowrap {
-    flex-wrap: nowrap !important;
+  flex-wrap: nowrap !important;
 }
 
 .flex-wrap-reverse {
-    flex-wrap: wrap-reverse !important;
+  flex-wrap: wrap-reverse !important;
 }
 
 // Position & Z-index
@@ -85,38 +99,60 @@ $z-indices: -1, 0, 1, 2, 3, 4, 5;
 $position-values: 0, 50, 100;
 
 @each $pos in $positions {
-    .pos-#{$pos} { position: #{$pos} !important; }
+  .pos-#{$pos} {
+    position: #{$pos} !important;
+  }
 }
 
 @each $z in $z-indices {
-    $key: if($z < 0, "n" + abs($z), $z);
-    .z-#{$key} { z-index: #{$z} !important; }
+  $key: if($z < 0, "n" + abs($z), $z);
+  .z-#{$key} {
+    z-index: #{$z} !important;
+  }
 }
 
 @each $val in $position-values {
-    .top-#{$val} { top: #{ $val + '%' } !important; }
-    .bottom-#{$val} { bottom: #{ $val + '%' } !important; }
-    .left-#{$val} { left: #{ $val + '%' } !important; }
-    .right-#{$val} { right: #{ $val + '%' } !important; }
+  .top-#{$val} {
+    top: #{$val + "%"} !important;
+  }
+  .bottom-#{$val} {
+    bottom: #{$val + "%"} !important;
+  }
+  .left-#{$val} {
+    left: #{$val + "%"} !important;
+  }
+  .right-#{$val} {
+    right: #{$val + "%"} !important;
+  }
 }
 
 // Overflow
 $overflows: auto, hidden, visible, scroll;
 @each $o in $overflows {
-    .overflow-#{$o} { overflow: $o !important; }
-    .overflowx-#{$o} { overflow-x: $o !important; }
-    .overflowy-#{$o} { overflow-y: $o !important; }
+  .overflow-#{$o} {
+    overflow: $o !important;
+  }
+  .overflowx-#{$o} {
+    overflow-x: $o !important;
+  }
+  .overflowy-#{$o} {
+    overflow-y: $o !important;
+  }
 }
 
 // Gap
 @each $key, $val in $spacing-steps {
-    .gap-#{$key} { gap: $val !important; }
+  .gap-#{$key} {
+    gap: $val !important;
+  }
 }
 
 @each $name, $breakpoint in $breakpoints {
-    @media (min-width: #{$breakpoint}) {
-        @each $key, $val in $spacing-steps {
-            .gap-#{$name}-#{$key} { gap: $val !important; }
-        }
+  @media (min-width: #{$breakpoint}) {
+    @each $key, $val in $spacing-steps {
+      .gap-#{$name}-#{$key} {
+        gap: $val !important;
+      }
     }
+  }
 }

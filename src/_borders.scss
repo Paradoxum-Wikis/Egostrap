@@ -5,70 +5,114 @@
 
 // Border Radius
 $radius-steps: (
-    "0": 0,
-    "1": 0.2rem,
-    "2": 0.5rem,
-    "3": 0.75rem,
-    "4": 1rem,
-    "5": 1.25rem,
-    "6": 1.5rem
+  "0": 0,
+  "1": 0.2rem,
+  "2": 0.5rem,
+  "3": 0.75rem,
+  "4": 1rem,
+  "5": 1.25rem,
+  "6": 1.5rem,
 );
 
-.rounded { border-radius: $border-radius !important; }
-@each $key, $val in $radius-steps {
-    .rounded-#{$key} { border-radius: $val !important; }
+.rounded {
+  border-radius: $border-radius !important;
 }
-.rounded-tds { border-radius: 25px 0 25px 0 !important; }
+@each $key, $val in $radius-steps {
+  .rounded-#{$key} {
+    border-radius: $val !important;
+  }
+}
+.rounded-tds {
+  border-radius: 25px 0 25px 0 !important;
+}
 
 $radius-corners: (
-    "tl": "top-left",
-    "tr": "top-right",
-    "br": "bottom-right",
-    "bl": "bottom-left"
+  "tl": "top-left",
+  "tr": "top-right",
+  "br": "bottom-right",
+  "bl": "bottom-left",
 );
 @each $abbr, $full in $radius-corners {
-    @each $key, $val in $radius-steps {
-        .rounded-#{$abbr}-#{$key} { border-#{$full}-radius: $val !important; }
+  @each $key, $val in $radius-steps {
+    .rounded-#{$abbr}-#{$key} {
+      border-#{$full}-radius: $val !important;
     }
+  }
 }
-.rounded-tl-tds { border-top-left-radius: 25px !important; }
-.rounded-tr-tds { border-top-right-radius: 0 !important; }
-.rounded-br-tds { border-bottom-right-radius: 25px !important; }
-.rounded-bl-tds { border-bottom-left-radius: 0 !important; }
+.rounded-tl-tds {
+  border-top-left-radius: 25px !important;
+}
+.rounded-tr-tds {
+  border-top-right-radius: 0 !important;
+}
+.rounded-br-tds {
+  border-bottom-right-radius: 25px !important;
+}
+.rounded-bl-tds {
+  border-bottom-left-radius: 0 !important;
+}
 
 // Borders
-.border-0 { border: 0 !important; }
-.border-top-0 { border-top: 0 !important; }
-.border-right-0 { border-right: 0 !important; }
-.border-bottom-0 { border-bottom: 0 !important; }
-.border-left-0 { border-left: 0 !important; }
+.border-0 {
+  border: 0 !important;
+}
+.border-top-0 {
+  border-top: 0 !important;
+}
+.border-right-0 {
+  border-right: 0 !important;
+}
+.border-bottom-0 {
+  border-bottom: 0 !important;
+}
+.border-left-0 {
+  border-left: 0 !important;
+}
 
 @for $i from 1 through 5 {
-    .border-#{$i} { border-width: #{$i}px !important; }
+  .border-#{$i} {
+    border-width: #{$i}px !important;
+  }
 }
 
 @each $name, $color in $theme-colors {
-    .border-#{$name} { border: 1px solid $color; }
+  .border-#{$name} {
+    border: 1px solid $color;
+  }
 }
-.border-light { border: 1px solid $light; }
-.border-dark { border: 1px solid $dark; }
+.border-light {
+  border: 1px solid $light;
+}
+.border-dark {
+  border: 1px solid $dark;
+}
 
 // Table Utilities
-.border-collapse { border-collapse: collapse !important; }
-.border-separate { border-collapse: separate !important; }
+.border-collapse {
+  border-collapse: collapse !important;
+}
+.border-separate {
+  border-collapse: separate !important;
+}
 
 $border-spacing: (
-    "0": 0,
-    "1": 0.25rem,
-    "2": 0.5rem,
-    "3": 0.75rem,
-    "4": 1rem,
-    "5": 1.25rem,
-    "6": 1.5rem
+  "0": 0,
+  "1": 0.25rem,
+  "2": 0.5rem,
+  "3": 0.75rem,
+  "4": 1rem,
+  "5": 1.25rem,
+  "6": 1.5rem,
 );
 
 @each $key, $val in $border-spacing {
-    .bs-#{$key} { border-spacing: $val !important; }
-    .bs-x-#{$key} { border-spacing: $val 0 !important; }
-    .bs-y-#{$key} { border-spacing: 0 $val !important; }
+  .bs-#{$key} {
+    border-spacing: $val !important;
+  }
+  .bs-x-#{$key} {
+    border-spacing: $val 0 !important;
+  }
+  .bs-y-#{$key} {
+    border-spacing: 0 $val !important;
+  }
 }

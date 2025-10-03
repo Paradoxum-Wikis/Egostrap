@@ -9,6 +9,7 @@ Documentation can be found [here](https://alter-ego.fandom.com/wiki/Help:Manual/
 ## Installation
 
 1. Clone the repository:
+
    ```
    git clone https://github.com/Paradoxum-Wikis/Egostrap.git
    cd Egostrap
@@ -23,6 +24,6 @@ I personally recommend installing Sass as global, but you do you.
 
 ## Testing
 
-You can compile the SCSS by doing ```npm run build```.
+You can compile the SCSS by doing `npm run build`.
 
 With the compiled file, you can then go into your browser's style editor and replace the current Egostrap with your version.
