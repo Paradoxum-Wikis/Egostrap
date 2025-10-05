@@ -93,6 +93,30 @@ $align-content: (
   flex-wrap: wrap-reverse !important;
 }
 
+// Flex Direction
+$flex-directions: (
+  "row": row,
+  "row-reverse": row-reverse,
+  "column": column,
+  "column-reverse": column-reverse,
+);
+
+@each $key, $value in $flex-directions {
+  .flex-#{$key} {
+    flex-direction: $value !important;
+  }
+}
+
+@each $name, $breakpoint in $breakpoints {
+  @media (min-width: #{$breakpoint}) {
+    @each $key, $value in $flex-directions {
+      .flex-#{$name}-#{$key} {
+        flex-direction: $value !important;
+      }
+    }
+  }
+}
+
 // Position & Z-index
 $positions: "static", "relative", "absolute", "fixed", "sticky";
 $z-indices: -1, 0, 1, 2, 3, 4, 5;
