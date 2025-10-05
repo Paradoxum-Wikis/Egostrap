@@ -28,11 +28,15 @@ $sizes: (
 
 // Min/max sizes
 $constrained-sizes: (
-  "0": 0,
-  "25": 25,
-  "50": 50,
-  "75": 75,
-  "100": 100,
+  "100": 100px,
+  "200": 200px,
+  "300": 300px,
+  "400": 400px,
+  "500": 500px,
+  "600": 600px,
+  "700": 700px,
+  "800": 800px,
+  "900": 900px,
 );
 
 // Width
@@ -60,28 +64,28 @@ $constrained-sizes: (
 // Min Width
 @each $key, $value in $constrained-sizes {
   .min-w-#{$key} {
-    min-width: #{$value}#{"%"} !important;
+    min-width: #{$value} !important;
   }
 }
 
 // Max Width
 @each $key, $value in $constrained-sizes {
   .max-w-#{$key} {
-    max-width: #{$value}#{"%"} !important;
+    max-width: #{$value} !important;
   }
 }
 
 // Min Height
 @each $key, $value in $constrained-sizes {
   .min-h-#{$key} {
-    min-height: #{$value}dvh !important;
+    min-height: #{$value} !important;
   }
 }
 
 // Max Height
 @each $key, $value in $constrained-sizes {
   .max-h-#{$key} {
-    max-height: #{$value}dvh !important;
+    max-height: #{$value} !important;
   }
 }
 
@@ -90,16 +94,16 @@ $constrained-sizes: (
   @media (min-width: #{$breakpoint}) {
     @each $key, $value in $constrained-sizes {
       .min-w-#{$name}-#{$key} {
-        min-width: #{$value}#{"%"} !important;
+        min-width: #{$value} !important;
       }
       .max-w-#{$name}-#{$key} {
-        max-width: #{$value}#{"%"} !important;
+        max-width: #{$value} !important;
       }
       .min-h-#{$name}-#{$key} {
-        min-height: #{$value}dvh !important;
+        min-height: #{$value} !important;
       }
       .max-h-#{$name}-#{$key} {
-        max-height: #{$value}dvh !important;
+        max-height: #{$value} !important;
       }
     }
   }
