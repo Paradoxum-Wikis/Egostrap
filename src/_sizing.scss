@@ -26,6 +26,15 @@ $sizes: (
   "fit": fit-content,
 );
 
+// Min/max sizes
+$constrained-sizes: (
+  "0": 0,
+  "25": 25,
+  "50": 50,
+  "75": 75,
+  "100": 100,
+);
+
 // Width
 @each $key, $value in $sizes {
   .w-#{$key} {
@@ -48,22 +57,49 @@ $sizes: (
   }
 }
 
+// Min Width
+@each $key, $value in $constrained-sizes {
+  .min-w-#{$key} {
+    min-width: #{$value}#{"%"} !important;
+  }
+}
+
+// Max Width
+@each $key, $value in $constrained-sizes {
+  .max-w-#{$key} {
+    max-width: #{$value}#{"%"} !important;
+  }
+}
+
+// Min Height
+@each $key, $value in $constrained-sizes {
+  .min-h-#{$key} {
+    min-height: #{$value}dvh !important;
+  }
+}
+
+// Max Height
+@each $key, $value in $constrained-sizes {
+  .max-h-#{$key} {
+    max-height: #{$value}dvh !important;
+  }
+}
+
+// Min/Max Width & Height
 @each $name, $breakpoint in $breakpoints {
   @media (min-width: #{$breakpoint}) {
-    @each $key, $value in $sizes {
-      .w-#{$name}-#{$key} {
-        width: if(
-          $value == auto or $value == fit-content,
-          $value,
-          #{$value}#{"%"}
-        ) !important;
+    @each $key, $value in $constrained-sizes {
+      .min-w-#{$name}-#{$key} {
+        min-width: #{$value}#{"%"} !important;
       }
-      .h-#{$name}-#{$key} {
-        height: if(
-          $value == auto or $value == fit-content,
-          $value,
-          #{$value}dvh
-        ) !important;
+      .max-w-#{$name}-#{$key} {
+        max-width: #{$value}#{"%"} !important;
+      }
+      .min-h-#{$name}-#{$key} {
+        min-height: #{$value}dvh !important;
+      }
+      .max-h-#{$name}-#{$key} {
+        max-height: #{$value}dvh !important;
       }
     }
   }
