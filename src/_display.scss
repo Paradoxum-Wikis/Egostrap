@@ -117,6 +117,27 @@ $flex-directions: (
   }
 }
 
+// Flex Growth
+.flex-1 {
+  flex: 1 1 0% !important;
+}
+
+.flex-2 {
+  flex: 2 1 0% !important;
+}
+
+.flex-auto {
+  flex: 1 1 auto !important;
+}
+
+.flex-initial {
+  flex: 0 1 auto !important;
+}
+
+.flex-none {
+  flex: none !important;
+}
+
 // Position & Z-index
 $positions: "static", "relative", "absolute", "fixed", "sticky";
 $z-indices: -1, 0, 1, 2, 3, 4, 5;
