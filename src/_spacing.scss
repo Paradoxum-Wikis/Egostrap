@@ -85,3 +85,7 @@ $space-directions: (
     }
   }
 }
+
+.mb-none > p {
+  margin-bottom: 0 !important;
+}
