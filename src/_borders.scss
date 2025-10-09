@@ -39,6 +39,20 @@ $radius-corners: (
     }
   }
 }
+
+.rounded-tl {
+  border-top-left-radius: $border-radius !important;
+}
+.rounded-tr {
+  border-top-right-radius: $border-radius !important;
+}
+.rounded-br {
+  border-bottom-right-radius: $border-radius !important;
+}
+.rounded-bl {
+  border-bottom-left-radius: $border-radius !important;
+}
+
 .rounded-tl-tds {
   border-top-left-radius: 25px !important;
 }
