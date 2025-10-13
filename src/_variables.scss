@@ -1,6 +1,6 @@
 // Variables
 
-// Colors
+// Colors // probably move this to vars in the future
 $primary: #e63946;
 $secondary: #6c757d;
 $success: #198754;
@@ -27,7 +27,8 @@ $theme-colors: (
   "nav-text": var(--theme-sticky-nav-text-color),
   "nav-bg": var(--theme-sticky-nav-background-color),
   "border": var(--border-color),
-  "link": var(--theme-link-color)
+  "link": var(--theme-link-color),
+  "roblox": var(--roblox)
 );
 
 // Layout
