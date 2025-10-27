@@ -1,29 +1,31 @@
 // Variables
 
 // Colors
-$primary: #e63946;
-$secondary: #6c757d;
-$success: #198754;
-$danger: #ff192f;
-$warning: #ffc107;
-$info: #0dcaf0;
-$light: #f8f9fa;
-$dark: #212529;
-$white: #fff;
-$black: #000;
+:root {
+  --ego-primary: #e63946;
+  --ego-secondary: #6c757d;
+  --ego-success: #198754;
+  --ego-danger: #ff192f;
+  --ego-warning: #ffc107;
+  --ego-info: #0dcaf0;
+  --ego-light: #f8f9fa;
+  --ego-dark: #212529;
+  --ego-white: #fff;
+  --ego-black: #000;
+}
 
 // Theme Colors Map
 $theme-colors: (
-  "primary": $primary,
-  "secondary": $secondary,
-  "success": $success,
-  "danger": $danger,
-  "warning": $warning,
-  "info": $info,
-  "light": $light,
-  "dark": $dark,
-  "white": $white,
-  "black": $black,
+  "primary": var(--ego-primary),
+  "secondary": var(--ego-secondary),
+  "success": var(--ego-success),
+  "danger": var(--ego-danger),
+  "warning": var(--ego-warning),
+  "info": var(--ego-info),
+  "light": var(--ego-light),
+  "dark": var(--ego-dark),
+  "white": var(--ego-white),
+  "black": var(--ego-black),
   "nav-text": var(--theme-sticky-nav-text-color),
   "nav-bg": var(--theme-sticky-nav-background-color),
   "border": var(--border-color),
