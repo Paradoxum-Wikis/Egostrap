@@ -95,10 +95,10 @@ $radius-corners: (
   }
 }
 .border-light {
-  border: 1px solid $light;
+  border: 1px solid var(--ego-light);
 }
 .border-dark {
-  border: 1px solid $dark;
+  border: 1px solid var(--ego-dark);
 }
 
 // Table Utilities
