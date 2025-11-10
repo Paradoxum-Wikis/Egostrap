@@ -2,11 +2,11 @@
   "type": "module",
   "dependencies": {
     "fetch-cookie": "^3.1.0",
-    "sass": "^1.91.0"
+    "sass": "^1.93.3"
   },
   "scripts": {
-    "build": "sass src/Egostrap.scss Egostrap.css --style=compressed --no-source-map",
-    "build2": "sass src/Egostrap.scss Egostrap.css",
+    "build": "sass src/Egostrap.scss egostrap.css --style=compressed --no-source-map",
+    "build2": "sass src/Egostrap.scss egostrap.css",
     "format": "prettier . --write"
   },
   "devDependencies": {

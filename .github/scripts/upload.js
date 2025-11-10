@@ -70,7 +70,7 @@ class WikiCSSUploader {
     if (!this.botUsername || !this.botPassword)
       throw new Error("Wiki bot credentials not configured.");
 
-    const cssPath = path.join(process.cwd(), "Egostrap.css");
+    const cssPath = path.join(process.cwd(), "egostrap.css");
     if (!fs.existsSync(cssPath))
       throw new Error("Compiled CSS file not found.");
 
@@ -80,8 +80,8 @@ class WikiCSSUploader {
 
     const commitSha = process.env.GITHUB_SHA;
     const summary = commitSha
-      ? `See https://github.com/Paradoxum-Wikis/Egostrap/commit/${commitSha}`
-      : "Automated deploy from https://github.com/Paradoxum-Wikis/Egostrap";
+      ? `See https://github.com/paradoxum-wikis/Egostrap/commit/${commitSha}`
+      : "Automated deploy from https://github.com/paradoxum-wikis/Egostrap";
 
     await this.editPage(cssContent, summary);
 
