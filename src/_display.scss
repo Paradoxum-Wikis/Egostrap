@@ -235,3 +235,68 @@ $ratios: (
     }
   }
 }
+
+// Image scalings
+$img-object-fits: (
+  "fit": contain,
+  "cover": cover,
+  "fill": fill,
+  "none": none,
+  "scale-down": scale-down
+);
+
+@each $key, $val in $img-object-fits {
+  .img-o-#{$key} {
+    width: 100% !important;
+    height: 100% !important;
+    object-fit: $val !important;
+  }
+}
+
+// Img display
+@each $prop in $display-properties {
+  .img-d-#{$prop} {
+    display: #{$prop} !important;
+  }
+}
+
+// Img object positions
+$object-positions: (
+  "center": center,
+  "top": top,
+  "bottom": bottom,
+  "left": left,
+  "right": right,
+  "top-left": left top,
+  "top-right": right top,
+  "bottom-left": left bottom,
+  "bottom-right": right bottom
+);
+
+@each $key, $val in $object-positions {
+  .img-o-pos-#{$key} {
+    object-position: $val !important;
+  }
+}
+
+// Img pos
+@each $pos in $positions {
+  .img-pos-#{$pos} {
+    position: #{$pos} !important;
+  }
+}
+
+@each $val in $position-values {
+  .img-top-#{$val} {
+    top: #{$val + "%"} !important;
+  }
+  .img-bottom-#{$val} {
+    bottom: #{$val + "%"} !important;
+  }
+  .img-left-#{$val} {
+    left: #{$val + "%"} !important;
+  }
+  .img-right-#{$val} {
+    right: #{$val + "%"} !important;
+  }
+}
