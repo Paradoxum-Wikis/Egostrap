@@ -219,7 +219,6 @@ $ratios: (
   $d: list.nth($nums, 2);
   .ratio-#{$key} {
     aspect-ratio: #{$n}/#{$d} !important;
-    width: 100% !important;
   }
 }
 
@@ -230,7 +229,6 @@ $ratios: (
       $d: list.nth($nums, 2);
       .ratio-#{$name}-#{$key} {
         aspect-ratio: #{$n}/#{$d} !important;
-        width: 100% !important;
       }
     }
   }
@@ -238,7 +236,7 @@ $ratios: (
 
 // Image scalings
 $img-object-fits: (
-  "fit": contain,
+  "contain": contain,
   "cover": cover,
   "fill": fill,
   "none": none,
@@ -246,7 +244,7 @@ $img-object-fits: (
 );
 
 @each $key, $val in $img-object-fits {
-  .img-o-#{$key} {
+  .img-o-#{$key} img {
     width: 100% !important;
     height: 100% !important;
     object-fit: $val !important;
@@ -255,7 +253,7 @@ $img-object-fits: (
 
 // Img display
 @each $prop in $display-properties {
-  .img-d-#{$prop} {
+  .img-d-#{$prop} img {
     display: #{$prop} !important;
   }
 }
@@ -274,29 +272,29 @@ $object-positions: (
 );
 
 @each $key, $val in $object-positions {
-  .img-o-pos-#{$key} {
+  .img-o-pos-#{$key} img {
     object-position: $val !important;
   }
 }
 
 // Img pos
 @each $pos in $positions {
-  .img-pos-#{$pos} {
+  .img-pos-#{$pos} img {
     position: #{$pos} !important;
   }
 }
 
 @each $val in $position-values {
-  .img-top-#{$val} {
+  .img-top-#{$val} img {
     top: #{$val + "%"} !important;
   }
-  .img-bottom-#{$val} {
+  .img-bottom-#{$val} img {
     bottom: #{$val + "%"} !important;
   }
-  .img-left-#{$val} {
+  .img-left-#{$val} img {
     left: #{$val + "%"} !important;
   }
-  .img-right-#{$val} {
+  .img-right-#{$val} img {
     right: #{$val + "%"} !important;
   }
 }
