@@ -298,3 +298,22 @@ $object-positions: (
     right: #{$val + "%"} !important;
   }
 }
+
+// Grid templates
+$grid-cols-temp: (
+  "1": 1,
+  "2": 2,
+  "3": 3,
+  "4": 4,
+  "6": 6,
+  "12": 12,
+);
+
+@each $key, $cols in $grid-cols-temp {
+  .grid-cols-#{$key} {
+    grid-template-columns: repeat(#{$cols}, 1fr) !important;
+  }
+  .grid-rows-#{$key} {
+    grid-template-rows: repeat(#{$cols}, 1fr) !important;
+  }
+}
